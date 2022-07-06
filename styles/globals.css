@@ -49,3 +49,22 @@ a {
 #__next {
   isolation: isolate;
 }
+
+.wrapper {
+  width: 90%;
+  max-width: 1420px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  padding: 1rem 0;
+}
+
+@media screen and (min-width: 400px) {
+  .wrapper {
+    justify-content: flex-start;
+  }
+}
