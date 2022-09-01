@@ -6,4 +6,8 @@ module.exports = {
     locales: ["sk", "cz"],
     defaultLocale: "cz",
   },
+  images: {
+    domains: ["d35xwkx70uaomf.cloudfront.net"],
+    formats: ["image/avif", "image/webp"],
+  },
 };

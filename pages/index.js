@@ -2,9 +2,12 @@ import styled from "styled-components";
 import Head from "next/head";
 import { Heading } from "../src/components/LayoutComponents";
 import { useCaravans } from "../src/lib/useFetch";
+import CaravanCard from "../src/components/caravan-card";
 
 const Home = () => {
   const { caravans, isError, isLoading } = useCaravans("data");
+
+  console.log(caravans);
 
   return (
     <PageWrapper>
@@ -17,7 +20,17 @@ const Home = () => {
       <section className="wrapper">
         <div className="grid">
           {caravans.items?.map((caravan) => {
-            return <Heading key={caravan.pictures[1]}>{caravan.name}</Heading>;
+            const { name, vehicleType } = caravan;
+
+            return (
+              <CaravanCard
+                key={caravan.pictures[1]}
+                href={`/caravans/${name}`}
+                name={name}
+                imgUrl="/caravan.jpeg"
+                vehicleType={vehicleType}
+              ></CaravanCard>
+            );
           })}
         </div>
       </section>
@@ -25,6 +38,6 @@ const Home = () => {
   );
 };
 
-const PageWrapper = styled.div``;
+const PageWrapper = styled.main``;
 
 export default Home;
