@@ -7,10 +7,10 @@ export const Heading = styled.h1`
 
 const LayoutComponents = ({ children }) => {
   return (
-    <div>
+    <>
       <Header />
       {children}
-    </div>
+    </>
   );
 };
 

@@ -15,13 +15,28 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, "Helvetica Neue", sans-serif;
 }
 
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+button {
+  background-color: #119383;
+  background-image: none;
 }
 
 img,
@@ -43,6 +58,7 @@ select {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 #root,
@@ -55,6 +71,7 @@ a {
   max-width: 1420px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -63,8 +80,15 @@ a {
   padding: 1rem 0;
 }
 
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
 @media screen and (min-width: 400px) {
   .wrapper {
-    justify-content: flex-start;
+    align-items: flex-start;
   }
 }

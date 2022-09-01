@@ -1,15 +1,23 @@
-import NextImage from "next/image";
+import Image from "next/image";
 import styled from "styled-components";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <>
-      <div className="wrapper">
-        <LogoContainer className="logo-container">
-          <NextImage src="/pragueLabsLogo.svg" height={35} width={201} />
-        </LogoContainer>
-      </div>
-    </>
+    <header className="wrapper">
+      <LogoContainer className="logo-container">
+        <Link href="/">
+          <a>
+            <Image
+              src="/pragueLabsLogo.svg"
+              height={35}
+              width={201}
+              alt="logo"
+            />
+          </a>
+        </Link>
+      </LogoContainer>
+    </header>
   );
 };
 
