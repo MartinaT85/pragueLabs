@@ -3,18 +3,16 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const CaravanCard = ({
-  instantBookable,
-  location,
-  name,
-  passengersCapacity,
-  picture,
-  price,
-  shower,
-  sleepCapacity,
-  toilet,
-  vehicleType,
   href,
   imgUrl,
+  location,
+  vehicleType,
+  name,
+  passengersCapacity,
+  sleepCapacity,
+  shower,
+  toilet,
+  instantBookable,
 }) => {
   return (
     <Link href={href}>
@@ -25,7 +23,56 @@ const CaravanCard = ({
           <StyledContent>
             <Styledh3>{vehicleType}</Styledh3>
             <h2>{name}</h2>
-            <StyledLine />
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                borderTop: "1px solid #edeae3",
+                borderBottom: "1px solid #edeae3",
+                margin: "0.5rem 0",
+                padding: "0.5rem 0",
+              }}
+            >
+              <div>
+                <p style={{ fontSize: ".875rem", marginBottom: ".5rem" }}>
+                  {location}
+                </p>
+              </div>
+              <div>
+                <Image
+                  src={"/icons/Icon-Bed Copy.svg"}
+                  alt=""
+                  height={20}
+                  width={20}
+                />
+                <p className="inline fs14">{passengersCapacity}</p>
+                <Image
+                  src={"/icons/Icon-Bed.svg"}
+                  alt=""
+                  height={20}
+                  width={20}
+                />
+                <p className="inline fs14">{sleepCapacity}</p>
+                {shower ? (
+                  <Image
+                    src={"/icons/Icon-Bed Copy 3.svg"}
+                    alt=""
+                    height={20}
+                    width={20}
+                  />
+                ) : null}
+                {toilet ? (
+                  <Image
+                    src={"/icons/Icon-Bed Copy 2.svg"}
+                    alt=""
+                    height={20}
+                    width={20}
+                  />
+                ) : null}
+              </div>
+            </div>
           </StyledContent>
         </StyledContainer>
       </a>
@@ -42,6 +89,7 @@ const Styledh3 = styled.h3`
 const StyledContainer = styled.div`
   border: 1px solid #edeae3;
   border-radius: 8px;
+  height: 100%;
 `;
 
 const StyledContent = styled.div`

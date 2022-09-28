@@ -1,8 +1,9 @@
 import useSWR from "swr";
 import fetcher from "./fetcher";
 
-export const useCaravans = () => {
-  const { data, error } = useSWR("/data", fetcher);
+export const useCaravans = (param) => {
+  const { data, error } = useSWR(`/${param}`, fetcher);
+
   return {
     caravans: data || [],
     isLoading: !data && !error,
