@@ -13,6 +13,7 @@ const CaravanCard = ({
   shower,
   toilet,
   instantBookable,
+  price
 }) => {
   return (
     <Link href={href}>
@@ -71,6 +72,21 @@ const CaravanCard = ({
                     width={20}
                   />
                 ) : null}
+              </div>
+            </div>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+              <p style={{color: '#9C8C8C'}}>Cena od</p>
+              <div style={{display: 'flex', alignItems: 'center', gap: '.25rem'}}>
+
+              <p style={{fontWeight: 'bold'}}>{`${price} Kč/den`} </p>
+              {
+                instantBookable ? <Image
+                  src={"/icons/ActionFilter.svg"}
+                  alt=""
+                  height={16}
+                  width={16}
+                /> : null
+                }
               </div>
             </div>
           </StyledContent>
