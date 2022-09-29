@@ -46,6 +46,10 @@ h6 {
 button {
   background-color: #119383;
   background-image: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2.45rem;
+  color: #fff;
 }
 
 img,

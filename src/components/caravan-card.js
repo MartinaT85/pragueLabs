@@ -13,13 +13,14 @@ const CaravanCard = ({
   shower,
   toilet,
   instantBookable,
-  price
+  price,
+  pictures
 }) => {
   return (
     <Link href={href}>
       <a>
         <StyledContainer>
-          <Image src={imgUrl} alt="" height={190} width={400} />
+          <Image src={pictures[0]} alt="" height={190} width={392} />
 
           <StyledContent>
             <Styledh3>{vehicleType}</Styledh3>

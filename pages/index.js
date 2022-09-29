@@ -3,9 +3,14 @@ import Head from "next/head";
 import { Heading } from "../src/components/LayoutComponents";
 import { useCaravans } from "../src/lib/useFetch";
 import CaravanCard from "../src/components/caravan-card";
+import { useState } from "react";
 
 const Home = () => {
+  const [visible, setVisible] = useState(6)
   const { caravans, isError, isLoading } = useCaravans("data");
+  const showMoreItems = () => {
+      setVisible(prevValue => prevValue + 3)
+  }
   console.log(caravans);
   return (
     <PageWrapper>
@@ -19,7 +24,7 @@ const Home = () => {
       ) : (
         <section className="wrapper">
           <div className="grid">
-            {caravans.items?.map((caravan) => {
+            {caravans.items?.slice(0, visible).map((caravan) => {
               return (
                 <CaravanCard
                   key={caravan.pictures[1]}
@@ -29,6 +34,14 @@ const Home = () => {
                 ></CaravanCard>
               );
             })}
+            
+
+            
+           
+          </div>
+          <div style={{display: 'flex', justifyContent: 'center', margin: '2rem 0', width: '100%'}}>
+
+          <button onClick={showMoreItems} style={{justifyContent: 'center'}}>Načíst další</button>
           </div>
         </section>
       )}
